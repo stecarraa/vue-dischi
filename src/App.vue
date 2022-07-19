@@ -10,7 +10,7 @@
 import MyHeader from './components/MyHeader.vue'
 import MyMainContent from './components/MyMainContent.vue'
 import MyFooter from './components/MyFooter.vue'
-import axios from 'axios'
+
 
 
 export default {

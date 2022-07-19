@@ -1,13 +1,15 @@
 <template>
-<div class="container-fluid ms-bg">
+    <div class="container-fluid ms-bg">
 
 
-<div class=" container loading-screen text-white" v-if=" loadingInProgress==true">
-  <h1>Caricamento in corso.......</h1>
+<div class="loading-screen" v-if=" loadingInProgress==true">
+  <h1>Caricamento in corso</h1>
+<div class="container">
+    <img  src="https://img.freepik.com/premium-vector/loading-bar-doodle-element-hand-drawn-line-sketch-style-slow-download-speed-progress-status-internet-load-bar-concept-isolated-vector-illustration_253081-853.jpg?w=2000" alt="">
 
 </div>
 
-
+</div>
 <div v-else >
 <div class="container d-flex flex-wrap ">
         <DiscLibrary v-for="(album, index) in albums" :key="index"
@@ -41,7 +43,7 @@ name:'MyMainContent',
     data: function() {
         return {
             albums: [],
-            loadingInProgress: true,
+            // loadingInProgress: true,
         }
     },
     methods: {
@@ -78,7 +80,8 @@ name:'MyMainContent',
 
 .loading-screen{
  img{
-  height: 50%;
+  height: 100%;
+  object-fit: cover;
  }
 }
 
