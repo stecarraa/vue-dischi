@@ -80,8 +80,9 @@ name:'MyMainContent',
 
 .loading-screen{
  img{
-  height: 100%;
+  width: 100%;
   object-fit: cover;
+  padding: 50px;
  }
 }
 
