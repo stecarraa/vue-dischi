@@ -3,7 +3,7 @@
         <img :src="poster" :alt="author">
         <h2 class="text-white">{{title}}</h2>
         <div class="text-secondary">{{author}}</div>
-        <div class="text-secondary">{{gender}}</div>
+        <div class="text-secondary">{{genre}}</div>
         <div class="text-secondary">{{year}}</div>
     </div>
 </template>

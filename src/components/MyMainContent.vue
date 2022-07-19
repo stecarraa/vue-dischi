@@ -3,11 +3,11 @@
 <div class="container d-flex flex-wrap ">
         <DiscLibrary v-for="(album, index) in albums" :key="index"
             
-            :author="album[index].author"
-            :genre="album[index].genre"
-            :poster="album[index].poster"
-            :title="album[index].title"
-            :year="album[index].year"
+            :author="album.author"
+            :genre="album.genre"
+            :poster="album.poster"
+            :title="album.title"
+            :year="album.year"
         />
 </div>
     </div>
@@ -38,7 +38,7 @@ name:'MyMainContent',
              {
                 axios.get("https://flynn.boolean.careers/exercises/api/array/music")
                     .then((result) => {
-                        this.albums.push(result.data.response);
+                        this.albums = result.data.response;
                     }
                 )
             }
@@ -48,6 +48,7 @@ name:'MyMainContent',
 
     created() {
         this.getAlbumsList();
+        
     },
 }
 </script>
