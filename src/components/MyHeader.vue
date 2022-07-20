@@ -1,37 +1,52 @@
-  <template>
-    <div>
-      <div class="container-fluid ms-bg-grey"> 
+<template>
+  <div>
+    <div class="container-fluid ms-bg-grey">
       <div class="row">
-    <div class="col-12 d-flex p-3 justify-content-between">
-      <img src="https://cdn1.iconfinder.com/data/icons/artcorepart-4/512/spotify.png" alt="">
+        <div class="col-12 d-flex p-3 justify-content-between">
+          <img
+            src="https://cdn1.iconfinder.com/data/icons/artcorepart-4/512/spotify.png"
+            alt=""
+          />
 
-  <div><div class="input-group rounded">
-    <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
-    <!-- <span class="input-group-text border-0" id="search-addon">
-      <i class="fas fa-search"></i>
-    </span> -->
-  </div>
-  </div>
-
-    </div>
+          <div>
+            <select v-model="selectedGenre">
+              <option value="">Seleziona un genere</option>
+              <option
+                v-for="(genre, index) in genresList"
+                :value="genre"
+                :key="index"
+              >
+                {{ genre }}
+              </option>
+            </select>
+          </div>
+        </div>
       </div>
-      </div>
     </div>
-  </template>
+  </div>
+</template>
 
-  <script>
-  export default {
-  name:'MyHeader'
-  }
-  </script>
+<script>
+export default {
+  name: "MyHeader",
+  props: {
+    genresList: Array,
+  },
 
-  <style lang="scss" scoped>
-  img{
-    height: 40px;
-    
-  }
+  data() {
+    return {
+      selectedGenre: "",
+    };
+  },
+};
+</script>
 
-  .ms-bg-grey{
-    background-color: #2D3945
-  }
-  </style>
+<style lang="scss" scoped>
+img {
+  height: 40px;
+}
+
+.ms-bg-grey {
+  background-color: #2d3945;
+}
+</style>
