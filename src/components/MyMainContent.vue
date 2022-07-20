@@ -3,7 +3,7 @@
 
 
 <div class="loading-screen" v-if=" loadingInProgress==true">
-  <h1>Caricamento in corso</h1>
+  <h1>Caricamento in corso .....</h1>
 <div class="container">
     <img  src="https://img.freepik.com/premium-vector/loading-bar-doodle-element-hand-drawn-line-sketch-style-slow-download-speed-progress-status-internet-load-bar-concept-isolated-vector-illustration_253081-853.jpg?w=2000" alt="">
 
