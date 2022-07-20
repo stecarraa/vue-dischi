@@ -8,18 +8,6 @@
             alt=""
           />
 
-          <div>
-            <select v-model="selectedGenre">
-              <option value="">Seleziona un genere</option>
-              <option
-                v-for="(genre, index) in genresList"
-                :value="genre"
-                :key="index"
-              >
-                {{ genre }}
-              </option>
-            </select>
-          </div>
         </div>
       </div>
     </div>
@@ -29,13 +17,11 @@
 <script>
 export default {
   name: "MyHeader",
-  props: {
-    genresList: Array,
-  },
+  
 
   data() {
     return {
-      selectedGenre: "",
+      
     };
   },
 };

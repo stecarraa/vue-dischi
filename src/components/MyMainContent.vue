@@ -10,6 +10,21 @@
       </div>
     </div>
     <div v-else>
+      <div>
+        <select
+          v-model="selectedGenre"
+          @change="$emit('genreSelected', selectedGenre)"
+        >
+          <option value="">Seleziona un genere</option>
+          <option
+            v-for="(genre, index) in genresList"
+            :value="genre"
+            :key="index"
+          >
+            {{ genre }}
+          </option>
+        </select>
+      </div>
       <div class="container d-flex flex-wrap">
         <DiscLibrary
           v-for="(album, index) in albums"
@@ -31,17 +46,15 @@ import DiscLibrary from "./DiscLibrary.vue";
 
 export default {
   name: "MyMainContent",
+ 
   components: {
     DiscLibrary,
   },
-props:{
-        'selectedGenre':String
-    },
-
   data: function () {
     return {
       albums: [],
-      genres:[],
+      genresList:[],
+      selectedGenre: "",
       loadingInProgress: true,
     };
   },
@@ -58,15 +71,15 @@ props:{
           });
       }
     },
-     filteredDisc(){
-            if(this.selectedGenre==""){
-                return this.discs;
-            }else{
-            return this.discs.filter(disc=>{
-                return disc.genre==this.selectedGenre;
-            });
-            }
-        }
+
+setGenres(genreSelected){
+      this.genresList=genreSelected;
+    },
+    setSelectedGenre(selectedGenreEvt){
+      this.selectedGenre=selectedGenreEvt;
+      
+    }
+
   },
 
   created() {
